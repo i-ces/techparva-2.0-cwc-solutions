@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
-gets.to_i
+n = gets.to_i
+
+if n.zero?
+  puts 0
+  exit
+end
 
 # Convert inputs to integers and store in array
 inputs = gets.split.map(&:to_i)
