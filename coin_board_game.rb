@@ -26,6 +26,11 @@ end
 puts 'Enter the number of rows and columns (separated by a space): '
 rows, cols = gets.chomp.split.map(&:to_i)
 
+if rows.zero? || cols.zero?
+  puts 0
+  exit
+end
+
 board = []
 puts "Enter the board values (#{rows} rows x #{cols} columns):"
 rows.times do
