@@ -6,12 +6,9 @@ def calculate_dip_count(stamp_times, ink_duration)
   current_dip_time = 0
 
   stamp_times.each do |stamp_time|
-    if stamp_time.zero?
+    if stamp_time.zero? || stamp_time > current_dip_time
       dip_count += 1
-      current_dip_time = ink_duration
-    elsif stamp_time > current_dip_time
       current_dip_time = stamp_time + ink_duration
-      dip_count += 1
     end
   end
 
